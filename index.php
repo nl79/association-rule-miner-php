@@ -5,7 +5,7 @@ require_once('./lib/Apriori.php');
 // Configuration for the Apriori object.
 $config = [
   'confidence' => .2,
-  'support' => .5
+  'support' => .2
 ];
 
 // Instantiate the object.
