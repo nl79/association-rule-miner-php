@@ -1,0 +1,10 @@
+paper
+pen
+yogurt
+beer
+phone
+candy
+bread
+potatoes
+water
+magazine
