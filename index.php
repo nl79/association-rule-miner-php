@@ -43,8 +43,8 @@ foreach($files as $file) {
   /*
    * Execute the Apriori algorithm.
    */
-  $result[$file] = $miner->mine($data);
+  $result[$file] = $miner->process($data);
 }
 
-var_dump($result);
+//var_dump($result);
 
