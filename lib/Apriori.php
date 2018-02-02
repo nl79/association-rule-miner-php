@@ -68,30 +68,44 @@ class Apriori
 
   private function mine() {
 
-    // Build l1
-    $this->l[] = array_filer($this->data, function($var) {
+    // Build C1
+    $count = count($this->data);
+    $list = [];
 
-    });
-
-    while($this->run === true) {
-      $count = count($in);
-
-      for($i = 0; $i < $count; ++$i) {
-
-        $item = $in[$i]
-
+    for($i = 0; $i < $count; ++$i) {
+      $transaction = $this->data[$i];
+      if(is_array($transaction)) {
+        foreach($transaction as $item) {
+          if(isset($list[$item])) {
+            $list[$item]++;
+          } else {
+            $list[$item] = 1;
+          }
+        }
       }
     }
 
+    // Filter out the items with low support
+    // Store the items in l[0]
+    $this->l[] = array_filter($list, function($val) {
+      return $this->checkSupport($val);
+    });
+
+    var_dump($this->l);
+
   }
 
-  private function isSupport($val) {
-    
-    return $this->support($val) >= $this->support;
+  private function hasSupport($val) {
+    return $this->checkSupport($this->support($val)) >= $this->support;
   }
 
-  private function support($set) {
+  private function checkSupport($sup) {
+    //var_dump($sup);
+    return ($sup/$this->total) >= $this->support;
+  }
 
+  private function support($val) {
+    return 0;
   }
 
   private function confidence($set) {
