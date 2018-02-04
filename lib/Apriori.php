@@ -1,12 +1,14 @@
 <?php
 
-class Apriori
-{
+  require_once('Set.php');
+
+class Apriori {
   private $confidence = null;
   private $support = null;
 
   private $data = null;
   private $total = 0;
+  private $max = 0;
 
   private $k = 1;
   private $l = [];
@@ -61,20 +63,66 @@ class Apriori
     $this->data = $input;
     $this->total = count($input);
 
-    var_dump($input);
-
     return $this->mine();
   }
 
   private function mine() {
 
-    // Build C1
-    $count = count($this->data);
+    $this->l[$this->k] = $this->flatten();
+    $this->k++;
+
+
+//    while($this->k < $this->max) {
+//      $this->l[$this->k] = $this->l($this->k);
+//      $this->k++;
+//    }
+    $this->l(2);
+  }
+
+  private function l($i) {
+
+    $output = [];
+
+    $l1 = $this->l[1];
+    $ln = $this->l[$i-1];
+
+    //Iterate over the outer list.
+    for($i = 0; $i < count($ln); ++$i) {
+
+      for($j = $i+1; $j < count($l1); ++$j) {
+        $set = new Set(
+          array_merge(
+            $ln[$i]->values(),
+            $l1[$j]->values()
+          )
+        );
+        // Validate that the set is unique in the list.
+
+        // Check the support.
+
+        $output[] = $set;
+      }
+    }
+
+    var_dump($output);
+    return $output;
+  }
+
+  private function flatten() {
     $list = [];
 
-    for($i = 0; $i < $count; ++$i) {
+    for($i = 0; $i < $this->total; ++$i) {
       $transaction = $this->data[$i];
       if(is_array($transaction)) {
+
+        // Check if the longest transaction.
+        // This would be the stopping condition for the
+        // algorithm.
+        $max = count($transaction);
+        if($max > $this->max) {
+          $this->max = $max;
+        }
+
         foreach($transaction as $item) {
           if(isset($list[$item])) {
             $list[$item]++;
@@ -85,14 +133,16 @@ class Apriori
       }
     }
 
-    // Filter out the items with low support
-    // Store the items in l[0]
-    $this->l[] = array_filter($list, function($val) {
-      return $this->checkSupport($val);
-    });
+    $results = [];
+    foreach($list as $key => $value) {
+      if($this->checkSupport($value)) {
 
-    var_dump($this->l);
+        $results[] = new Set($key, ['support' => $value]);
 
+      }
+    }
+
+    return $results;
   }
 
   private function hasSupport($val) {
@@ -100,7 +150,6 @@ class Apriori
   }
 
   private function checkSupport($sup) {
-    //var_dump($sup);
     return ($sup/$this->total) >= $this->support;
   }
 
