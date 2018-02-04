@@ -13,8 +13,6 @@ class Apriori {
   private $k = 1;
   private $l = [];
 
-  private $run = true;
-
   public function __construct($config) {
     $this->configure($config);
   }
@@ -72,11 +70,28 @@ class Apriori {
     $this->k++;
 
 
-//    while($this->k < $this->max) {
-//      $this->l[$this->k] = $this->l($this->k);
-//      $this->k++;
-//    }
-    $this->l(2);
+    while($this->k <= $this->max) {
+      $this->l[$this->k] = $this->l($this->k);
+      $this->k++;
+    }
+
+    //$this->toString();
+  }
+
+  public function toString() {
+    $l = $this->l;
+    for($i = 0; $i < count($l); ++ $i) {
+
+      $c = $l[$i];
+      var_dump('List#: ' . $i);
+
+      for($j = 0; $j < count($c); ++ $j) {
+        $set = $c[$j];
+
+        var_dump($set->toString());
+
+      }
+    }
   }
 
   private function l($i) {
@@ -86,25 +101,48 @@ class Apriori {
     $l1 = $this->l[1];
     $ln = $this->l[$i-1];
 
+    var_dump("l = $i");
     //Iterate over the outer list.
     for($i = 0; $i < count($ln); ++$i) {
 
       for($j = $i+1; $j < count($l1); ++$j) {
+
+        $setN = $ln[$i];
+        $set1 = $l1[$j];
+//        var_dump('$ln[$i] - ' . $setN->toString());
+//        var_dump('$l1[$j] - ' . $set1->toString());
+        // Validate that $ln does not contain values in $l1
+        if($setN->containsAnyOf($set1)) {
+          continue;
+        }
+
         $set = new Set(
           array_merge(
             $ln[$i]->values(),
             $l1[$j]->values()
           )
         );
-        // Validate that the set is unique in the list.
+
+        // Check that this set of items does not already exist in the list.
+        foreach($output as $item) {
+          if($item->equals($set)) {
+            var_dump('equals');
+            continue 2;
+          }
+        }
+
+        //var_dump("i: $i - j: $j - " . $set->toString());
+
 
         // Check the support.
+        if(!$this->hasSupport($set)) {
+          continue;
+        }
+
 
         $output[] = $set;
       }
     }
-
-    var_dump($output);
     return $output;
   }
 
@@ -154,7 +192,23 @@ class Apriori {
   }
 
   private function support($val) {
-    return 0;
+    //var_dump('support', $val);
+
+    $count = 0;
+    foreach($this->data as $transaction) {
+      //var_dump('trans:  ' . implode(',', $transaction));
+      if($val->isSubsetOf($transaction)) {
+        $count++;
+      }
+    }
+
+    if($count > 1) {
+      var_dump($count);
+      var_dump(implode(',', $val->values()));
+    }
+
+
+    return $count;
   }
 
   private function confidence($set) {
