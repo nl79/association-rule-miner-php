@@ -8,9 +8,8 @@ class Apriori {
 
   private $data = null;
   private $total = 0;
-  private $max = 0;
 
-  private $k = 1;
+  private $k = 0;
   private $l = [];
 
   public function __construct($config) {
@@ -66,17 +65,26 @@ class Apriori {
 
   private function mine() {
 
-    $this->l[$this->k] = $this->flatten();
-    $this->k++;
 
+    // Generate the frequent Items sets.
+    while(true) {
+      $result = $this->frequentItemSetList($this->k);
 
-    while($this->k <= $this->max) {
-      $this->l[$this->k] = $this->l($this->k);
+      // If the result is empty, there is no point continuing.
+      if(empty($result)) {
+        break;
+      }
+
+      $this->l[$this->k] = $result;
       $this->k++;
     }
 
+    // Generate the confidence values.
+
+    $this->rules();
     //$this->toString();
   }
+
 
   public function toString() {
     $l = $this->l;
@@ -87,30 +95,45 @@ class Apriori {
 
       for($j = 0; $j < count($c); ++ $j) {
         $set = $c[$j];
-
         var_dump($set->toString());
-
       }
     }
   }
 
-  private function l($i) {
+  private function rules() {
+    $results = [];
 
+    for($i = 1; $i < count($this->l); ++$i) {
+      $l = $this->l[$i];
+      for($j = 0; $j < count($l); ++$j) {
+        $set = $l[$j];
+        $confidence = $this->confidence($set);
+
+        $set->meta('confidence', $confidence);
+        $results[] = $set;
+      }
+    }
+  }
+
+  private function frequentItemSetList($i) {
+
+    if($i === 0) {
+      return $this->initialize();
+    }
     $output = [];
 
-    $l1 = $this->l[1];
+    $l0 = $this->l[0];
     $ln = $this->l[$i-1];
 
-    var_dump("l = $i");
     //Iterate over the outer list.
     for($i = 0; $i < count($ln); ++$i) {
 
-      for($j = $i+1; $j < count($l1); ++$j) {
+      // Iterate over the inner list.
+      for($j = $i+1; $j < count($l0); ++$j) {
 
         $setN = $ln[$i];
-        $set1 = $l1[$j];
-//        var_dump('$ln[$i] - ' . $setN->toString());
-//        var_dump('$l1[$j] - ' . $set1->toString());
+        $set1 = $l0[$j];
+
         // Validate that $ln does not contain values in $l1
         if($setN->containsAnyOf($set1)) {
           continue;
@@ -119,26 +142,25 @@ class Apriori {
         $set = new Set(
           array_merge(
             $ln[$i]->values(),
-            $l1[$j]->values()
+            $l0[$j]->values()
           )
         );
 
         // Check that this set of items does not already exist in the list.
         foreach($output as $item) {
           if($item->equals($set)) {
-            var_dump('equals');
             continue 2;
           }
         }
 
-        //var_dump("i: $i - j: $j - " . $set->toString());
-
-
         // Check the support.
-        if(!$this->hasSupport($set)) {
+        $support = $this->support($set);
+
+        if(!$this->hasSupport($support)) {
           continue;
         }
 
+        $set->meta('support', $support);
 
         $output[] = $set;
       }
@@ -146,21 +168,12 @@ class Apriori {
     return $output;
   }
 
-  private function flatten() {
+  private function initialize() {
     $list = [];
 
     for($i = 0; $i < $this->total; ++$i) {
       $transaction = $this->data[$i];
       if(is_array($transaction)) {
-
-        // Check if the longest transaction.
-        // This would be the stopping condition for the
-        // algorithm.
-        $max = count($transaction);
-        if($max > $this->max) {
-          $this->max = $max;
-        }
-
         foreach($transaction as $item) {
           if(isset($list[$item])) {
             $list[$item]++;
@@ -173,10 +186,10 @@ class Apriori {
 
     $results = [];
     foreach($list as $key => $value) {
-      if($this->checkSupport($value)) {
+      $support = $value / $this->total;
+      if($this->hasSupport($support)) {
 
-        $results[] = new Set($key, ['support' => $value]);
-
+        $results[] = new Set($key, ['support' => $support]);
       }
     }
 
@@ -184,11 +197,7 @@ class Apriori {
   }
 
   private function hasSupport($val) {
-    return $this->checkSupport($this->support($val)) >= $this->support;
-  }
-
-  private function checkSupport($sup) {
-    return ($sup/$this->total) >= $this->support;
+    return $val >= $this->support;
   }
 
   private function support($val) {
@@ -202,16 +211,14 @@ class Apriori {
       }
     }
 
-    if($count > 1) {
-      var_dump($count);
-      var_dump(implode(',', $val->values()));
-    }
-
-
-    return $count;
+    return ($count/$this->total);
   }
 
   private function confidence($set) {
+    var_dump($set);
 
+    
+
+    return 0;
   }
 }

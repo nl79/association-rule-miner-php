@@ -11,7 +11,17 @@
     }
 
     public function toString() {
-      return implode(',', $this->values());
+      $str = '{ ' . implode(',', $this->values()) . ' } ';
+
+      if(!empty($this->meta)) {
+        $str .= '- meta:[';
+        foreach($this->meta as $key => $value) {
+          $str .= "($key = $value)";
+        }
+
+        $str .= ']';
+      }
+      return $str;
     }
 
     public function get($val = null) {
@@ -42,7 +52,7 @@
     }
 
     public function equals($set) {
-      if($set->values() == $this->values()) {
+      if(array_values($set->values()) == array_values($this->values())) {
         return true;
       }
 
@@ -67,7 +77,16 @@
     }
 
     public function meta($key, $value = null) {
+      if(empty($key) || !is_scalar($key)) {
+        throw new Exception('Invalid Key value supplied');
+      }
 
+      if(is_null($value)) {
+        return isset($this->meta[$key]) ? $this->meta[$key] : null;
+      } else {
+        $this->meta[$key] = $value;
+        return $value;
+      }
     }
 
     private function build($values) {
