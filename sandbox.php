@@ -6,14 +6,28 @@
  * Time: 6:16 PM
  */
 
-$transaction = ['pen','magazine','paper'];
+//$transaction = ['pen','magazine','paper'];
+//
+//sort($transaction);
+//
+//$compare = ['paper', 'pen'];
+//$vals = array_values(array_intersect($transaction, $compare));
+//var_dump($vals);
+//var_dump($vals == $compare);
 
-sort($transaction);
+$set = ['a', 'b'];
 
-$compare = ['paper', 'pen'];
+$rotations = count($set);
 
-$vals = array_values(array_intersect($transaction, $compare));
+for($i = 0; $i <= $rotations; ++$i) {
 
-var_dump($vals);
+  for($j = 1; $j < $rotations; ++$j) {
+    $a = array_slice($set, 0, $j);
+    $b = array_slice($set, $j);
 
-var_dump($vals == $compare);
+    //a -> b
+  }
+
+  //rotate
+  array_push($set, array_shift($set));
+}

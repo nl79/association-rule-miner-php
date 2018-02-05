@@ -52,7 +52,16 @@
     }
 
     public function equals($set) {
-      if(array_values($set->values()) == array_values($this->values())) {
+      $values = null;
+
+      if($set instanceof Set) {
+        $values = array_values($set->values());
+      } elseif( is_array($set)) {
+        $values = $set;
+      }
+
+      sort($values);
+      if($values == array_values($this->values())) {
         return true;
       }
 

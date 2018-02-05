@@ -200,6 +200,10 @@ class Apriori {
     return $val >= $this->support;
   }
 
+  private function hasConfidence($val) {
+    return $val >= $this->confidence;
+  }
+
   private function support($val) {
     //var_dump('support', $val);
 
@@ -214,11 +218,56 @@ class Apriori {
     return ($count/$this->total);
   }
 
+  private function findSet($val) {
+
+    // Calculate the list number in which sets are located.
+    $num = (count($val) - 1);
+
+    if(!isset($this->l[$num])) { return null;}
+
+    $l = $this->l[$num];
+
+    $count = count($l);
+
+    for($i = 0; $i < $count; ++$i) {
+      $set = $l[$i];
+
+      if($set->equals($val)) {
+        return $set;
+      }
+    }
+  }
+
   private function confidence($set) {
-    var_dump($set);
+    var_dump('--'. $set->toString());
 
-    
+    $values = $set->values();
+    $count = count($values);
 
-    return 0;
+    $results = [];
+    $support = $set->meta('support');
+
+    for($i = 0; $i < $count; ++$i) {
+
+      for($j = 1; $j < $count; ++$j) {
+        $a = array_slice($values, 0, $j);
+        $b = array_slice($values, $j);
+
+        //a -> b
+        $setA = $this->findSet($a);
+        //$setB = $this->findSet($b);
+
+        $confidence = $support / $setA->meta('support');
+
+        if(!$this->hasConfidence($confidence)) {
+          continue;
+        }
+        // Check min confidence;
+        $results[implode(',', $a) . ' => ' . implode(',', $b)] = $confidence;
+      }
+      //rotate
+      array_push($values, array_shift($values));
+    }
+    return $results;
   }
 }
