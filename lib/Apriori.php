@@ -1,6 +1,25 @@
 <?php
 
   require_once('Set.php');
+class Result {
+  private $data = [];
+  public function __construct($data) {
+    $this->data = $data;
+  }
+
+  public function toString() {
+    $str = '';
+    if(is_array($this->data) && !empty($this->data)) {
+      foreach($this->data as $item) {
+        if(method_exists($item, 'toString')) {
+          $str .= $item->toString() . "\n";
+        }
+      }
+    }
+
+    return $str;
+  }
+}
 
 class Apriori {
   private $confidence = null;
@@ -11,6 +30,10 @@ class Apriori {
 
   private $k = 0;
   private $l = [];
+
+  private $result = null;
+
+  private $done = false;
 
   public function __construct($config) {
     $this->configure($config);
@@ -50,18 +73,40 @@ class Apriori {
   }
 
   public function process($input) {
+
+    /*
+     * If the processing has been completed throw an exception if another
+     * attempt is made to process the data using the same instance.
+     */
+    if($this->done === true) {
+      trigger_error("Cannot re-run a completed job!.", E_USER_ERROR);
+      return $this;
+    }
+
     if(!is_numeric($this->confidence) || !is_numeric($this->support)){
       throw new Exception("Invalid Support or Confidence Values");
     }
 
     if(empty(($input))) {
-      return [];
+      return $this;
     }
     $this->data = $input;
     $this->total = count($input);
 
-    return $this->mine();
+    // Store the results that satisfy the confidence conditions.
+    $this->result = $this->mine();
+
+    // Set the done flag.
+    $this->done = true;
+
+    return $this;
   }
+
+  public function result() {
+    return new Result($this->result);
+  }
+
+
 
   private function mine() {
 
@@ -81,23 +126,25 @@ class Apriori {
 
     // Generate the confidence values.
 
-    $this->rules();
+    return $this->rules();
     //$this->toString();
   }
 
 
   public function toString() {
+    $str = '';
     $l = $this->l;
     for($i = 0; $i < count($l); ++ $i) {
 
       $c = $l[$i];
-      var_dump('List#: ' . $i);
 
       for($j = 0; $j < count($c); ++ $j) {
         $set = $c[$j];
-        var_dump($set->toString());
+        $str .= $set->toString() . "\n";
       }
     }
+
+    return $str;
   }
 
   private function rules() {
@@ -109,10 +156,14 @@ class Apriori {
         $set = $l[$j];
         $confidence = $this->confidence($set);
 
+        if(empty($confidence)) { continue; }
+
         $set->meta('confidence', $confidence);
         $results[] = $set;
       }
     }
+
+    return $results;
   }
 
   private function frequentItemSetList($i) {
@@ -239,7 +290,6 @@ class Apriori {
   }
 
   private function confidence($set) {
-    var_dump('--'. $set->toString());
 
     $values = $set->values();
     $count = count($values);
@@ -255,6 +305,9 @@ class Apriori {
 
         //a -> b
         $setA = $this->findSet($a);
+        if(!$setA) {
+          continue;
+        }
         //$setB = $this->findSet($b);
 
         $confidence = $support / $setA->meta('support');

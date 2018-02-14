@@ -16,7 +16,17 @@
       if(!empty($this->meta)) {
         $str .= '- meta:[';
         foreach($this->meta as $key => $value) {
-          $str .= "($key = $value)";
+          if(is_array($value)) {
+
+            $str .= "\n\t($key = \n\t\t";
+            foreach($value as $set => $conf) {
+              $str .= "{" . "$set : $conf" . "}\n\t\t";
+            }
+            $str .= ")";
+
+          } else {
+            $str .= "($key = $value)";
+          }
         }
 
         $str .= ']';

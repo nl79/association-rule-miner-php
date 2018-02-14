@@ -9,7 +9,7 @@ $config = [
 ];
 
 // Instantiate the object.
-$miner = new Apriori($config);
+$miner;
 $result = [];
 
 // Array of input files
@@ -24,6 +24,7 @@ $files = [
 foreach($files as $file) {
   $fh = fopen($file,'r');
   $data = [];
+  $miner = new Apriori($config);
 
   /*
    * Pre-process the input and transform it into a simple array.
@@ -43,8 +44,7 @@ foreach($files as $file) {
   /*
    * Execute the Apriori algorithm.
    */
-  $result[$file] = $miner->process($data);
+  $result[$file] = $miner->process($data)->result()->toString();
 }
 
-//var_dump($result);
-
+var_dump($result);

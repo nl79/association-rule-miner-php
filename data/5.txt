@@ -1,0 +1,20 @@
+1, candy, pen, water, paper, phone
+2, bread
+3, yogurt, phone, candy, potatoes, beer, paper, bread
+4, paper, magazine, potatoes
+5, potatoes, pen, magazine, paper
+6, yogurt
+7, water, magazine
+8, magazine, water, paper, candy, potatoes, beer, yogurt, pen
+9, bread, candy, beer
+10, phone, candy, yogurt, water, beer
+11, phone, beer, bread, pen, yogurt, magazine
+12, bread, pen, yogurt, water, phone, candy, potatoes, paper, magazine
+13, potatoes, pen
+14, bread, potatoes, magazine
+15, beer, water, magazine
+16, magazine, phone, potatoes, yogurt, paper, water
+17, beer, potatoes, water, phone, candy, yogurt, pen, magazine, paper, bread
+18, paper, magazine, beer, potatoes, pen, candy
+19, bread, potatoes, beer, yogurt, pen
+20, potatoes, magazine, water, phone
