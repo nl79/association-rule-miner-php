@@ -11,25 +11,23 @@
     }
 
     public function toString() {
-      $str = '{ ' . implode(',', $this->values()) . ' } ';
+      $str = 'SET: { ' . implode(',', $this->values()) . ' } ';
 
       if(!empty($this->meta)) {
-        $str .= '- meta:[';
+        $str .= ':';
         foreach($this->meta as $key => $value) {
           if(is_array($value)) {
 
-            $str .= "\n\t($key = \n\t\t";
+            $str .= "\n\t$key = \n\t\t";
             foreach($value as $set => $conf) {
-              $str .= "{" . "$set : $conf" . "}\n\t\t";
+              $str .= "{ " . "$set : $conf" . " }\n\t\t";
             }
-            $str .= ")";
+            $str .= " ";
 
           } else {
-            $str .= "($key = $value)";
+            $str .= "\n\t$key = { $value }";
           }
         }
-
-        $str .= ']';
       }
       return $str;
     }

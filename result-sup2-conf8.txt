@@ -1,0 +1,1223 @@
+SUPPORT: 0.2
+CONFIDENCE: 0.8
+--------------------Input File: ./data/1.txt--------------------
+SET: { paper,pen } :
+	support = { 0.4 }
+	confidence = 
+		{ paper => pen : 0.8 }
+		{ pen => paper : 0.8 }
+		 
+SET: { paper,phone } :
+	support = { 0.2 }
+	confidence = 
+		{ phone => paper : 0.8 }
+		 
+SET: { phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ phone => water : 0.8 }
+		 
+SET: { paper,pen,water } :
+	support = { 0.25 }
+	confidence = 
+		{ pen,water => paper : 0.83333333333333 }
+		{ water,paper => pen : 0.83333333333333 }
+		 
+SUPPORT: 0.2
+CONFIDENCE: 0.8
+--------------------Input File: ./data/2.txt--------------------
+SET: { phone,water } :
+	support = { 0.4 }
+	confidence = 
+		{ phone => water : 0.8 }
+		 
+SET: { paper,water } :
+	support = { 0.4 }
+	confidence = 
+		{ paper => water : 0.8 }
+		 
+SET: { paper,pen } :
+	support = { 0.4 }
+	confidence = 
+		{ paper => pen : 0.8 }
+		 
+SET: { beer,bread,phone } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,beer => bread : 0.8 }
+		 
+SET: { bread,paper,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ paper,phone => bread : 0.83333333333333 }
+		 
+SET: { phone,water,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ yogurt,phone => water : 0.83333333333333 }
+		 
+SET: { beer,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,phone => water : 0.8 }
+		 
+SET: { paper,phone,water } :
+	support = { 0.25 }
+	confidence = 
+		{ paper,phone => water : 0.83333333333333 }
+		 
+SET: { phone,potatoes,water } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,potatoes => water : 1 }
+		 
+SET: { pen,phone,water } :
+	support = { 0.3 }
+	confidence = 
+		{ pen,phone => water : 0.85714285714286 }
+		 
+SET: { beer,phone,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ beer,phone => yogurt : 1 }
+		{ phone,yogurt => beer : 0.83333333333333 }
+		 
+SET: { paper,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,paper => pen : 0.83333333333333 }
+		 
+SET: { pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,potatoes => pen : 1 }
+		{ potatoes,pen => phone : 0.8 }
+		 
+SET: { bread,paper,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ bread,paper,phone => water : 0.8 }
+		{ paper,phone,water => bread : 0.8 }
+		{ phone,water,bread => paper : 0.8 }
+		 
+SET: { bread,pen,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ bread,pen,phone => water : 0.8 }
+		{ phone,water,bread => pen : 0.8 }
+		 
+SET: { beer,bread,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,bread,phone => yogurt : 1 }
+		{ bread,phone,yogurt => beer : 1 }
+		{ phone,yogurt,beer => bread : 0.8 }
+		 
+SET: { bread,paper,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ paper,pen,phone => bread : 1 }
+		{ pen,phone,bread => paper : 1 }
+		{ phone,bread,paper => pen : 1 }
+		 
+SET: { bread,paper,pen,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ bread,paper,pen,phone => water : 0.8 }
+		{ paper,pen,phone => water,bread : 0.8 }
+		{ pen,phone,water,bread => paper : 1 }
+		{ phone,water,bread => paper,pen : 0.8 }
+		{ phone,water,bread,paper => pen : 1 }
+		 
+SUPPORT: 0.2
+CONFIDENCE: 0.8
+--------------------Input File: ./data/3.txt--------------------
+SET: { magazine,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ potatoes => magazine : 0.85714285714286 }
+		 
+SET: { bread,pen } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => pen : 0.88888888888889 }
+		 
+SET: { pen,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ potatoes => pen : 0.85714285714286 }
+		 
+SET: { pen,water } :
+	support = { 0.4 }
+	confidence = 
+		{ water => pen : 1 }
+		 
+SET: { candy,pen } :
+	support = { 0.45 }
+	confidence = 
+		{ pen => candy : 0.81818181818182 }
+		 
+SET: { candy,potatoes } :
+	support = { 0.35 }
+	confidence = 
+		{ potatoes => candy : 1 }
+		 
+SET: { candy,water } :
+	support = { 0.35 }
+	confidence = 
+		{ water => candy : 0.875 }
+		 
+SET: { bread,pen,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ yogurt,bread => pen : 1 }
+		 
+SET: { bread,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ bread,water => yogurt : 0.8 }
+		{ yogurt,bread => water : 1 }
+		 
+SET: { pen,water,yogurt } :
+	support = { 0.3 }
+	confidence = 
+		{ water,yogurt => pen : 1 }
+		{ yogurt,pen => water : 1 }
+		 
+SET: { beer,pen,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ yogurt,beer => pen : 0.8 }
+		 
+SET: { candy,pen,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ pen,yogurt => candy : 0.83333333333333 }
+		{ yogurt,candy => pen : 0.83333333333333 }
+		 
+SET: { pen,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone => yogurt : 0.8 }
+		{ phone,yogurt => pen : 1 }
+		 
+SET: { paper,pen,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ yogurt,paper => pen : 1 }
+		 
+SET: { beer,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ yogurt,beer => water : 0.8 }
+		 
+SET: { candy,water,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ water,yogurt => candy : 0.83333333333333 }
+		{ yogurt,candy => water : 0.83333333333333 }
+		 
+SET: { phone,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,water => yogurt : 1 }
+		{ yogurt,phone => water : 1 }
+		 
+SET: { paper,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ paper,water => yogurt : 0.8 }
+		{ yogurt,paper => water : 1 }
+		 
+SET: { beer,paper,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,paper => yogurt : 0.8 }
+		{ paper,yogurt => beer : 1 }
+		{ yogurt,beer => paper : 0.8 }
+		 
+SET: { candy,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,yogurt => candy : 1 }
+		 
+SET: { magazine,pen,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ water,yogurt,magazine => pen : 1 }
+		{ yogurt,magazine,pen => water : 1 }
+		 
+SET: { bread,pen,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ water,yogurt,bread => pen : 1 }
+		{ yogurt,bread => pen,water : 1 }
+		{ yogurt,bread,pen => water : 1 }
+		 
+SET: { beer,pen,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ water,yogurt,beer => pen : 1 }
+		{ yogurt,beer => pen,water : 0.8 }
+		{ yogurt,beer,pen => water : 1 }
+		 
+SET: { candy,pen,water,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ pen,water,yogurt => candy : 0.83333333333333 }
+		{ water,yogurt => candy,pen : 0.83333333333333 }
+		{ water,yogurt,candy => pen : 1 }
+		{ yogurt,candy => pen,water : 0.83333333333333 }
+		{ yogurt,candy,pen => water : 1 }
+		 
+SET: { pen,phone,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone => water,yogurt : 0.8 }
+		{ phone,water => yogurt,pen : 1 }
+		{ phone,water,yogurt => pen : 1 }
+		{ yogurt,pen,phone => water : 1 }
+		 
+SET: { paper,pen,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ water,yogurt,paper => pen : 1 }
+		{ yogurt,paper => pen,water : 1 }
+		{ yogurt,paper,pen => water : 1 }
+		 
+SET: { beer,paper,pen,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,paper => pen,yogurt : 0.8 }
+		{ paper,pen,yogurt => beer : 1 }
+		{ pen,yogurt,beer => paper : 1 }
+		{ yogurt,beer => paper,pen : 0.8 }
+		{ yogurt,beer,paper => pen : 1 }
+		 
+SET: { candy,pen,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone => yogurt,candy : 0.8 }
+		{ pen,phone,yogurt => candy : 1 }
+		{ phone,yogurt => candy,pen : 1 }
+		{ phone,yogurt,candy => pen : 1 }
+		{ yogurt,candy,pen => phone : 0.8 }
+		 
+SET: { beer,paper,pen,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,paper => pen,water,yogurt : 0.8 }
+		{ paper,pen,water,yogurt => beer : 1 }
+		{ pen,water,yogurt,beer => paper : 1 }
+		{ water,yogurt,beer => paper,pen : 1 }
+		{ yogurt,beer => paper,pen,water : 0.8 }
+		{ yogurt,beer,paper => pen,water : 1 }
+		{ yogurt,beer,paper,pen => water : 1 }
+		 
+SET: { candy,pen,phone,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone => water,yogurt,candy : 0.8 }
+		{ pen,phone,water,yogurt => candy : 1 }
+		{ phone,water => yogurt,candy,pen : 1 }
+		{ phone,water,yogurt => candy,pen : 1 }
+		{ water,yogurt,candy => pen,phone : 0.8 }
+		{ water,yogurt,candy,pen => phone : 0.8 }
+		{ yogurt,candy,pen => phone,water : 0.8 }
+		{ yogurt,candy,pen,phone => water : 1 }
+		 
+SUPPORT: 0.2
+CONFIDENCE: 0.8
+--------------------Input File: ./data/4.txt--------------------
+SET: { candy,phone } :
+	support = { 0.65 }
+	confidence = 
+		{ candy => phone : 0.92857142857143 }
+		{ phone => candy : 0.8125 }
+		 
+SET: { paper,phone } :
+	support = { 0.65 }
+	confidence = 
+		{ paper => phone : 0.92857142857143 }
+		{ phone => paper : 0.8125 }
+		 
+SET: { bread,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => phone : 0.8 }
+		 
+SET: { beer,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => phone : 0.8 }
+		 
+SET: { phone,water } :
+	support = { 0.45 }
+	confidence = 
+		{ water => phone : 0.9 }
+		 
+SET: { magazine,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ magazine => phone : 0.88888888888889 }
+		 
+SET: { paper,potatoes } :
+	support = { 0.6 }
+	confidence = 
+		{ paper => potatoes : 0.85714285714286 }
+		 
+SET: { bread,potatoes } :
+	support = { 0.45 }
+	confidence = 
+		{ bread => potatoes : 0.9 }
+		 
+SET: { beer,potatoes } :
+	support = { 0.45 }
+	confidence = 
+		{ beer => potatoes : 0.9 }
+		 
+SET: { beer,candy } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => candy : 0.8 }
+		 
+SET: { bread,paper } :
+	support = { 0.45 }
+	confidence = 
+		{ bread => paper : 0.9 }
+		 
+SET: { beer,paper } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => paper : 0.8 }
+		 
+SET: { paper,water } :
+	support = { 0.45 }
+	confidence = 
+		{ water => paper : 0.9 }
+		 
+SET: { beer,yogurt } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => yogurt : 0.8 }
+		 
+SET: { water,yogurt } :
+	support = { 0.4 }
+	confidence = 
+		{ water => yogurt : 0.8 }
+		 
+SET: { pen,yogurt } :
+	support = { 0.5 }
+	confidence = 
+		{ pen => yogurt : 0.90909090909091 }
+		 
+SET: { magazine,yogurt } :
+	support = { 0.45 }
+	confidence = 
+		{ magazine => yogurt : 1 }
+		 
+SET: { candy,phone,potatoes } :
+	support = { 0.5 }
+	confidence = 
+		{ phone,potatoes => candy : 0.83333333333333 }
+		{ potatoes,candy => phone : 0.90909090909091 }
+		 
+SET: { paper,phone,potatoes } :
+	support = { 0.55 }
+	confidence = 
+		{ paper,phone => potatoes : 0.84615384615385 }
+		{ phone,potatoes => paper : 0.91666666666667 }
+		{ potatoes,paper => phone : 0.91666666666667 }
+		 
+SET: { bread,phone,potatoes } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => phone,potatoes : 0.8 }
+		{ bread,phone => potatoes : 1 }
+		{ potatoes,bread => phone : 0.88888888888889 }
+		 
+SET: { beer,phone,potatoes } :
+	support = { 0.35 }
+	confidence = 
+		{ beer,phone => potatoes : 0.875 }
+		 
+SET: { phone,potatoes,water } :
+	support = { 0.3 }
+	confidence = 
+		{ potatoes,water => phone : 0.85714285714286 }
+		 
+SET: { magazine,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ potatoes,magazine => phone : 0.83333333333333 }
+		 
+SET: { candy,paper,phone } :
+	support = { 0.5 }
+	confidence = 
+		{ candy,paper => phone : 1 }
+		 
+SET: { bread,candy,phone } :
+	support = { 0.35 }
+	confidence = 
+		{ bread,candy => phone : 1 }
+		{ phone,bread => candy : 0.875 }
+		 
+SET: { beer,candy,phone } :
+	support = { 0.35 }
+	confidence = 
+		{ beer,candy => phone : 0.875 }
+		{ phone,beer => candy : 0.875 }
+		 
+SET: { candy,phone,water } :
+	support = { 0.35 }
+	confidence = 
+		{ water,candy => phone : 1 }
+		 
+SET: { candy,phone,yogurt } :
+	support = { 0.45 }
+	confidence = 
+		{ yogurt,candy => phone : 0.9 }
+		 
+SET: { candy,pen,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ candy,pen => phone : 0.85714285714286 }
+		{ pen,phone => candy : 0.85714285714286 }
+		 
+SET: { candy,magazine,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ candy,magazine => phone : 0.85714285714286 }
+		 
+SET: { bread,paper,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => paper,phone : 0.8 }
+		{ bread,paper => phone : 0.88888888888889 }
+		{ phone,bread => paper : 1 }
+		 
+SET: { beer,paper,phone } :
+	support = { 0.35 }
+	confidence = 
+		{ beer,paper => phone : 0.875 }
+		{ phone,beer => paper : 0.875 }
+		 
+SET: { paper,phone,water } :
+	support = { 0.4 }
+	confidence = 
+		{ phone,water => paper : 0.88888888888889 }
+		{ water => paper,phone : 0.8 }
+		{ water,paper => phone : 0.88888888888889 }
+		 
+SET: { paper,phone,yogurt } :
+	support = { 0.45 }
+	confidence = 
+		{ yogurt,paper => phone : 0.9 }
+		 
+SET: { paper,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ paper,pen => phone : 0.83333333333333 }
+		 
+SET: { magazine,paper,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ magazine,paper => phone : 1 }
+		 
+SET: { beer,bread,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ beer,bread => phone : 0.85714285714286 }
+		 
+SET: { bread,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ water,bread => phone : 0.8 }
+		 
+SET: { bread,phone,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ yogurt,bread => phone : 0.83333333333333 }
+		 
+SET: { beer,magazine,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ beer,magazine => phone : 0.83333333333333 }
+		 
+SET: { phone,water,yogurt } :
+	support = { 0.35 }
+	confidence = 
+		{ water,yogurt => phone : 0.875 }
+		 
+SET: { magazine,phone,water } :
+	support = { 0.25 }
+	confidence = 
+		{ water,magazine => phone : 1 }
+		 
+SET: { pen,phone,yogurt } :
+	support = { 0.35 }
+	confidence = 
+		{ pen,phone => yogurt : 1 }
+		 
+SET: { magazine,phone,yogurt } :
+	support = { 0.4 }
+	confidence = 
+		{ magazine => phone,yogurt : 0.88888888888889 }
+		{ magazine,phone => yogurt : 1 }
+		{ yogurt,magazine => phone : 0.88888888888889 }
+		 
+SET: { magazine,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ magazine,pen => phone : 0.83333333333333 }
+		 
+SET: { candy,paper,phone,potatoes } :
+	support = { 0.45 }
+	confidence = 
+		{ candy,paper => phone,potatoes : 0.9 }
+		{ candy,paper,phone => potatoes : 0.9 }
+		{ paper,phone,potatoes => candy : 0.81818181818182 }
+		{ phone,potatoes,candy => paper : 0.9 }
+		{ potatoes,candy => paper,phone : 0.81818181818182 }
+		 
+SET: { bread,candy,phone,potatoes } :
+	support = { 0.35 }
+	confidence = 
+		{ bread,candy => phone,potatoes : 1 }
+		{ bread,candy,phone => potatoes : 1 }
+		{ phone,potatoes,bread => candy : 0.875 }
+		 
+SET: { beer,candy,phone,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ beer,candy,phone => potatoes : 0.85714285714286 }
+		{ phone,potatoes,beer => candy : 0.85714285714286 }
+		 
+SET: { candy,phone,potatoes,water } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,potatoes,water => candy : 0.83333333333333 }
+		 
+SET: { candy,pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone,potatoes => candy : 0.8 }
+		 
+SET: { bread,paper,phone,potatoes } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => paper,phone,potatoes : 0.8 }
+		{ bread,paper => phone,potatoes : 0.88888888888889 }
+		{ bread,paper,phone => potatoes : 1 }
+		{ phone,potatoes,bread => paper : 1 }
+		{ potatoes,bread => paper,phone : 0.88888888888889 }
+		 
+SET: { beer,paper,phone,potatoes } :
+	support = { 0.35 }
+	confidence = 
+		{ beer,paper => phone,potatoes : 0.875 }
+		{ beer,paper,phone => potatoes : 1 }
+		{ phone,potatoes,beer => paper : 1 }
+		 
+SET: { paper,phone,potatoes,water } :
+	support = { 0.3 }
+	confidence = 
+		{ phone,potatoes,water => paper : 1 }
+		{ potatoes,water => paper,phone : 0.85714285714286 }
+		 
+SET: { paper,phone,potatoes,yogurt } :
+	support = { 0.35 }
+	confidence = 
+		{ phone,potatoes,yogurt => paper : 0.875 }
+		 
+SET: { paper,pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ paper,pen,phone => potatoes : 0.8 }
+		{ pen,phone,potatoes => paper : 0.8 }
+		 
+SET: { magazine,paper,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ magazine,paper => phone,potatoes : 0.83333333333333 }
+		{ magazine,paper,phone => potatoes : 0.83333333333333 }
+		{ phone,potatoes,magazine => paper : 1 }
+		{ potatoes,magazine => paper,phone : 0.83333333333333 }
+		 
+SET: { beer,bread,phone,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ beer,bread => phone,potatoes : 0.85714285714286 }
+		{ beer,bread,phone => potatoes : 1 }
+		{ phone,potatoes,beer => bread : 0.85714285714286 }
+		 
+SET: { bread,phone,potatoes,water } :
+	support = { 0.2 }
+	confidence = 
+		{ water,bread => phone,potatoes : 0.8 }
+		{ water,bread,phone => potatoes : 1 }
+		 
+SET: { bread,phone,potatoes,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ yogurt,bread => phone,potatoes : 0.83333333333333 }
+		{ yogurt,bread,phone => potatoes : 1 }
+		 
+SET: { bread,pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ bread,pen,phone => potatoes : 1 }
+		{ pen,phone,potatoes => bread : 0.8 }
+		 
+SET: { beer,phone,potatoes,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ yogurt,beer,phone => potatoes : 0.83333333333333 }
+		 
+SET: { beer,magazine,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,magazine,phone => potatoes : 0.8 }
+		{ magazine,phone,potatoes => beer : 0.8 }
+		 
+SET: { pen,phone,potatoes,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ pen,phone,potatoes => yogurt : 1 }
+		 
+SET: { magazine,phone,potatoes,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ magazine,phone,potatoes => yogurt : 1 }
+		 
+SET: { bread,candy,paper,phone,potatoes } :
+	support = { 0.35 }
+	confidence = 
+		{ bread,candy => paper,phone,potatoes : 1 }
+		{ paper,phone,potatoes,bread => candy : 0.875 }
+		{ phone,potatoes,bread => candy,paper : 0.875 }
+		{ phone,potatoes,bread,candy => paper : 1 }
+		 
+SET: { beer,candy,paper,phone,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ paper,phone,potatoes,beer => candy : 0.85714285714286 }
+		{ phone,potatoes,beer => candy,paper : 0.85714285714286 }
+		{ phone,potatoes,beer,candy => paper : 1 }
+		 
+SET: { candy,paper,phone,potatoes,water } :
+	support = { 0.25 }
+	confidence = 
+		{ paper,phone,potatoes,water => candy : 0.83333333333333 }
+		{ phone,potatoes,water => candy,paper : 0.83333333333333 }
+		{ phone,potatoes,water,candy => paper : 1 }
+		 
+SET: { candy,paper,phone,potatoes,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,potatoes,yogurt,candy => paper : 0.83333333333333 }
+		 
+SET: { beer,bread,candy,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ candy,phone,potatoes,beer => bread : 0.83333333333333 }
+		{ phone,potatoes,beer,bread => candy : 0.83333333333333 }
+		 
+SET: { bread,candy,phone,potatoes,water } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,phone,potatoes,water => bread : 0.8 }
+		{ phone,potatoes,water,bread => candy : 1 }
+		{ water,bread => candy,phone,potatoes : 0.8 }
+		 
+SET: { bread,candy,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,potatoes,yogurt,bread => candy : 0.8 }
+		 
+SET: { beer,candy,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,potatoes,yogurt,beer => candy : 0.8 }
+		 
+SET: { candy,pen,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,pen,phone,potatoes => yogurt : 1 }
+		{ pen,phone,potatoes => yogurt,candy : 0.8 }
+		{ pen,phone,potatoes,yogurt => candy : 0.8 }
+		 
+SET: { bread,paper,phone,potatoes,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,potatoes,yogurt,bread => paper : 1 }
+		{ yogurt,bread => paper,phone,potatoes : 0.83333333333333 }
+		 
+SET: { bread,paper,pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ paper,pen,phone => potatoes,bread : 0.8 }
+		{ paper,pen,phone,potatoes => bread : 1 }
+		{ pen,phone,potatoes => bread,paper : 0.8 }
+		{ pen,phone,potatoes,bread => paper : 1 }
+		 
+SET: { beer,magazine,paper,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ magazine,paper,phone,potatoes => beer : 0.8 }
+		{ phone,potatoes,beer,magazine => paper : 1 }
+		 
+SET: { beer,bread,candy,paper,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ candy,paper,phone,potatoes,beer => bread : 0.83333333333333 }
+		{ phone,potatoes,beer,bread => candy,paper : 0.83333333333333 }
+		{ phone,potatoes,beer,bread,candy => paper : 1 }
+		 
+SET: { bread,candy,paper,phone,potatoes,water } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,paper,phone,potatoes,water => bread : 0.8 }
+		{ phone,potatoes,water,bread => candy,paper : 1 }
+		{ phone,potatoes,water,bread,candy => paper : 1 }
+		{ water,bread => candy,paper,phone,potatoes : 0.8 }
+		 
+SET: { bread,candy,paper,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,paper,phone,potatoes,yogurt => bread : 0.8 }
+		{ paper,phone,potatoes,yogurt,bread => candy : 0.8 }
+		{ phone,potatoes,yogurt,bread => candy,paper : 0.8 }
+		{ phone,potatoes,yogurt,bread,candy => paper : 1 }
+		 
+SET: { beer,candy,paper,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,paper,phone,potatoes,yogurt => beer : 0.8 }
+		{ phone,potatoes,yogurt,beer => candy,paper : 0.8 }
+		{ phone,potatoes,yogurt,beer,candy => paper : 1 }
+		 
+SUPPORT: 0.2
+CONFIDENCE: 0.8
+--------------------Input File: ./data/5.txt--------------------
+SET: { pen,phone } :
+	support = { 0.45 }
+	confidence = 
+		{ phone => pen : 0.9 }
+		 
+SET: { magazine,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ phone => magazine : 0.8 }
+		 
+SET: { bread,phone } :
+	support = { 0.45 }
+	confidence = 
+		{ bread => phone : 0.9 }
+		{ phone => bread : 0.9 }
+		 
+SET: { water,yogurt } :
+	support = { 0.4 }
+	confidence = 
+		{ yogurt => water : 0.88888888888889 }
+		 
+SET: { potatoes,yogurt } :
+	support = { 0.4 }
+	confidence = 
+		{ yogurt => potatoes : 0.88888888888889 }
+		 
+SET: { magazine,pen } :
+	support = { 0.55 }
+	confidence = 
+		{ magazine => pen : 1 }
+		{ pen => magazine : 0.84615384615385 }
+		 
+SET: { bread,pen } :
+	support = { 0.45 }
+	confidence = 
+		{ bread => pen : 0.9 }
+		 
+SET: { pen,potatoes } :
+	support = { 0.45 }
+	confidence = 
+		{ potatoes => pen : 0.81818181818182 }
+		 
+SET: { beer,pen } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => pen : 0.88888888888889 }
+		 
+SET: { paper,pen } :
+	support = { 0.4 }
+	confidence = 
+		{ paper => pen : 0.88888888888889 }
+		 
+SET: { bread,magazine } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => magazine : 0.8 }
+		 
+SET: { beer,magazine } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => magazine : 0.88888888888889 }
+		 
+SET: { magazine,paper } :
+	support = { 0.4 }
+	confidence = 
+		{ paper => magazine : 0.88888888888889 }
+		 
+SET: { paper,water } :
+	support = { 0.4 }
+	confidence = 
+		{ paper => water : 0.88888888888889 }
+		 
+SET: { beer,potatoes } :
+	support = { 0.4 }
+	confidence = 
+		{ beer => potatoes : 0.88888888888889 }
+		 
+SET: { pen,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,yogurt => pen : 0.8 }
+		 
+SET: { candy,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,yogurt => candy : 0.8 }
+		 
+SET: { bread,phone,yogurt } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,yogurt => bread : 1 }
+		{ yogurt,bread => phone : 1 }
+		 
+SET: { phone,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ yogurt,phone => water : 0.8 }
+		 
+SET: { phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ yogurt,phone => potatoes : 0.8 }
+		 
+SET: { magazine,pen,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ pen,phone => magazine : 0.88888888888889 }
+		{ phone => magazine,pen : 0.8 }
+		{ phone,magazine => pen : 1 }
+		 
+SET: { candy,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ candy,pen => phone : 0.83333333333333 }
+		{ phone,candy => pen : 0.83333333333333 }
+		 
+SET: { bread,pen,phone } :
+	support = { 0.4 }
+	confidence = 
+		{ bread => pen,phone : 0.8 }
+		{ bread,pen => phone : 0.88888888888889 }
+		{ pen,phone => bread : 0.88888888888889 }
+		{ phone => bread,pen : 0.8 }
+		{ phone,bread => pen : 0.88888888888889 }
+		 
+SET: { pen,phone,water } :
+	support = { 0.3 }
+	confidence = 
+		{ phone,water => pen : 0.85714285714286 }
+		 
+SET: { pen,phone,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ phone,potatoes => pen : 1 }
+		 
+SET: { beer,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,beer => pen : 1 }
+		 
+SET: { paper,pen,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ phone,paper => pen : 0.85714285714286 }
+		 
+SET: { candy,magazine,phone } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,magazine => phone : 0.8 }
+		 
+SET: { bread,magazine,phone } :
+	support = { 0.35 }
+	confidence = 
+		{ bread,magazine => phone : 0.875 }
+		{ magazine,phone => bread : 0.875 }
+		 
+SET: { magazine,phone,water } :
+	support = { 0.3 }
+	confidence = 
+		{ phone,water => magazine : 0.85714285714286 }
+		 
+SET: { magazine,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,potatoes => magazine : 0.83333333333333 }
+		 
+SET: { beer,magazine,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ phone,beer => magazine : 1 }
+		 
+SET: { magazine,paper,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ paper,phone => magazine : 0.85714285714286 }
+		 
+SET: { bread,candy,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ bread,candy => phone : 0.85714285714286 }
+		{ candy,phone => bread : 1 }
+		 
+SET: { candy,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ candy,phone => potatoes : 0.83333333333333 }
+		{ phone,potatoes => candy : 0.83333333333333 }
+		 
+SET: { bread,phone,water } :
+	support = { 0.35 }
+	confidence = 
+		{ phone,water => bread : 1 }
+		{ water,bread => phone : 1 }
+		 
+SET: { bread,phone,potatoes } :
+	support = { 0.3 }
+	confidence = 
+		{ phone,potatoes => bread : 1 }
+		{ potatoes,bread => phone : 0.85714285714286 }
+		 
+SET: { beer,bread,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ beer,bread => phone : 0.83333333333333 }
+		{ phone,beer => bread : 1 }
+		 
+SET: { bread,paper,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ bread,paper => phone : 1 }
+		{ paper,phone => bread : 0.85714285714286 }
+		 
+SET: { beer,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,phone => water : 0.8 }
+		 
+SET: { paper,phone,water } :
+	support = { 0.3 }
+	confidence = 
+		{ paper,phone => water : 0.85714285714286 }
+		{ phone,water => paper : 0.85714285714286 }
+		 
+SET: { beer,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,phone => potatoes : 0.8 }
+		 
+SET: { beer,paper,phone } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,beer => paper : 0.8 }
+		 
+SET: { bread,pen,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone,yogurt => bread : 1 }
+		{ phone,yogurt => bread,pen : 0.8 }
+		{ phone,yogurt,bread => pen : 0.8 }
+		{ yogurt,bread => pen,phone : 0.8 }
+		 
+SET: { pen,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,potatoes,yogurt => pen : 1 }
+		{ yogurt,pen,phone => potatoes : 1 }
+		 
+SET: { bread,candy,phone,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ candy,phone,yogurt => bread : 1 }
+		{ phone,yogurt => bread,candy : 0.8 }
+		{ phone,yogurt,bread => candy : 0.8 }
+		{ yogurt,bread => candy,phone : 0.8 }
+		 
+SET: { bread,phone,water,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,water,yogurt => bread : 1 }
+		{ yogurt,bread => phone,water : 0.8 }
+		{ yogurt,bread,phone => water : 0.8 }
+		 
+SET: { bread,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ phone,potatoes,yogurt => bread : 1 }
+		{ yogurt,bread => phone,potatoes : 0.8 }
+		{ yogurt,bread,phone => potatoes : 0.8 }
+		 
+SET: { magazine,pen,phone,water } :
+	support = { 0.3 }
+	confidence = 
+		{ pen,phone,water => magazine : 1 }
+		{ phone,water => magazine,pen : 0.85714285714286 }
+		{ phone,water,magazine => pen : 1 }
+		 
+SET: { magazine,pen,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ pen,phone,potatoes => magazine : 0.83333333333333 }
+		{ phone,potatoes => magazine,pen : 0.83333333333333 }
+		{ phone,potatoes,magazine => pen : 1 }
+		 
+SET: { beer,magazine,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ pen,phone,beer => magazine : 1 }
+		{ phone,beer => magazine,pen : 1 }
+		{ phone,beer,magazine => pen : 1 }
+		 
+SET: { magazine,paper,pen,phone } :
+	support = { 0.3 }
+	confidence = 
+		{ paper,pen,phone => magazine : 1 }
+		{ phone,magazine,paper => pen : 1 }
+		 
+SET: { candy,pen,phone,potatoes } :
+	support = { 0.25 }
+	confidence = 
+		{ candy,pen => phone,potatoes : 0.83333333333333 }
+		{ candy,pen,phone => potatoes : 1 }
+		{ pen,phone,potatoes => candy : 0.83333333333333 }
+		{ phone,potatoes => candy,pen : 0.83333333333333 }
+		{ phone,potatoes,candy => pen : 1 }
+		 
+SET: { beer,bread,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ beer,bread => pen,phone : 0.83333333333333 }
+		{ pen,phone,beer => bread : 1 }
+		{ phone,beer => bread,pen : 1 }
+		{ phone,beer,bread => pen : 1 }
+		 
+SET: { bread,paper,pen,phone } :
+	support = { 0.25 }
+	confidence = 
+		{ bread,paper => pen,phone : 0.83333333333333 }
+		{ paper,pen,phone => bread : 0.83333333333333 }
+		{ phone,bread,paper => pen : 0.83333333333333 }
+		 
+SET: { paper,pen,phone,water } :
+	support = { 0.25 }
+	confidence = 
+		{ paper,pen,phone => water : 0.83333333333333 }
+		{ pen,phone,water => paper : 0.83333333333333 }
+		{ phone,water,paper => pen : 0.83333333333333 }
+		 
+SET: { bread,pen,phone,potatoes,yogurt } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone,potatoes,yogurt => bread : 1 }
+		{ phone,potatoes,yogurt => bread,pen : 1 }
+		{ phone,potatoes,yogurt,bread => pen : 1 }
+		{ yogurt,bread => pen,phone,potatoes : 0.8 }
+		{ yogurt,bread,pen,phone => potatoes : 1 }
+		 
+SET: { magazine,pen,phone,potatoes,water } :
+	support = { 0.2 }
+	confidence = 
+		{ magazine,pen,phone,potatoes => water : 0.8 }
+		{ phone,potatoes,water => magazine,pen : 1 }
+		 
+SET: { beer,magazine,pen,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,magazine,pen,phone => water : 0.8 }
+		{ phone,water,beer => magazine,pen : 1 }
+		 
+SET: { magazine,paper,pen,phone,water } :
+	support = { 0.25 }
+	confidence = 
+		{ magazine,paper,pen,phone => water : 0.83333333333333 }
+		{ paper,pen,phone => water,magazine : 0.83333333333333 }
+		{ paper,pen,phone,water => magazine : 1 }
+		{ pen,phone,water => magazine,paper : 0.83333333333333 }
+		{ pen,phone,water,magazine => paper : 0.83333333333333 }
+		{ phone,water,magazine => paper,pen : 0.83333333333333 }
+		 
+SET: { beer,magazine,pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,magazine,pen,phone => potatoes : 0.8 }
+		{ magazine,pen,phone,potatoes => beer : 0.8 }
+		{ phone,potatoes,beer => magazine,pen : 1 }
+		 
+SET: { beer,magazine,paper,pen,phone } :
+	support = { 0.2 }
+	confidence = 
+		{ pen,phone,beer => magazine,paper : 0.8 }
+		{ pen,phone,beer,magazine => paper : 0.8 }
+		{ phone,beer => magazine,paper,pen : 0.8 }
+		{ phone,beer,magazine => paper,pen : 0.8 }
+		 
+SET: { bread,magazine,pen,phone,potatoes,water } :
+	support = { 0.2 }
+	confidence = 
+		{ magazine,pen,phone,potatoes => water,bread : 0.8 }
+		{ magazine,pen,phone,potatoes,water => bread : 1 }
+		{ phone,potatoes,water => bread,magazine,pen : 1 }
+		 
+SET: { beer,bread,magazine,pen,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ magazine,pen,phone,water,beer => bread : 1 }
+		{ phone,water,beer => bread,magazine,pen : 1 }
+		 
+SET: { beer,magazine,paper,pen,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ beer,magazine,paper,pen,phone => water : 1 }
+		{ magazine,paper,pen,phone,water => beer : 0.8 }
+		{ paper,pen,phone,water => beer,magazine : 0.8 }
+		{ pen,phone,water,beer,magazine => paper : 1 }
+		{ phone,water,beer => magazine,paper,pen : 1 }
+		 
+SET: { bread,magazine,paper,pen,phone,water } :
+	support = { 0.25 }
+	confidence = 
+		{ magazine,paper,pen,phone => water,bread : 0.83333333333333 }
+		{ magazine,paper,pen,phone,water => bread : 1 }
+		{ paper,pen,phone => water,bread,magazine : 0.83333333333333 }
+		{ paper,pen,phone,water => bread,magazine : 1 }
+		{ pen,phone,water => bread,magazine,paper : 0.83333333333333 }
+		 
+SET: { beer,bread,magazine,pen,phone,potatoes } :
+	support = { 0.2 }
+	confidence = 
+		{ magazine,pen,phone,potatoes => beer,bread : 0.8 }
+		{ magazine,pen,phone,potatoes,beer => bread : 1 }
+		{ phone,potatoes,beer => bread,magazine,pen : 1 }
+		 
+SET: { beer,bread,magazine,paper,pen,phone,water } :
+	support = { 0.2 }
+	confidence = 
+		{ bread,magazine,paper,pen,phone,water => beer : 0.8 }
+		{ magazine,paper,pen,phone,water => beer,bread : 0.8 }
+		{ magazine,paper,pen,phone,water,beer => bread : 1 }
+		{ paper,pen,phone,water => beer,bread,magazine : 0.8 }
+		{ pen,phone,water,beer,bread,magazine => paper : 1 }
+		{ phone,water,beer => bread,magazine,paper,pen : 1 }
+		 

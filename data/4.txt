@@ -7,14 +7,14 @@
 7, yogurt, pen, potatoes
 8, phone, yogurt, magazine, candy, water
 9, phone, paper, yogurt, water
-10, water, phone, yogurt, bread, candy, pen, beer, paper, magazine, potatoes
+10, water, phone, yogurt, , paper, magazine, potatoes
 11, pen, bread
 12, paper, pen, potatoes, yogurt, beer, phone, magazine, bread
 13, paper, bread, candy, potatoes, water, phone
-14, yogurt, pen, paper, beer, potatoes, water, magazine, phone, candy
+14, yogurt, pen, paper, water, magazine, phone, candy
 15, candy, potatoes, phone, yogurt, pen
 16, candy, potatoes, phone, beer, paper, pen, yogurt, water, magazine, bread
-17, beer, phone, candy, pen, bread, water, paper, magazine, yogurt
+17, beer, phone, candy, pen, magazine, yogurt
 18, candy, paper, potatoes, beer, phone, bread
 19, yogurt, magazine, candy, pen, potatoes, beer
 20, paper, magazine, potatoes, candy, pen, yogurt, phone, bread, water, beer

@@ -1,0 +1,116 @@
+SUPPORT: 0.5
+CONFIDENCE: 0.6
+--------------------Input File: ./data/1.txt--------------------
+SUPPORT: 0.5
+CONFIDENCE: 0.6
+--------------------Input File: ./data/2.txt--------------------
+SUPPORT: 0.5
+CONFIDENCE: 0.6
+--------------------Input File: ./data/3.txt--------------------
+SUPPORT: 0.5
+CONFIDENCE: 0.6
+--------------------Input File: ./data/4.txt--------------------
+SET: { phone,potatoes } :
+	support = { 0.6 }
+	confidence = 
+		{ phone => potatoes : 0.75 }
+		{ potatoes => phone : 0.8 }
+		 
+SET: { candy,phone } :
+	support = { 0.65 }
+	confidence = 
+		{ candy => phone : 0.92857142857143 }
+		{ phone => candy : 0.8125 }
+		 
+SET: { paper,phone } :
+	support = { 0.65 }
+	confidence = 
+		{ paper => phone : 0.92857142857143 }
+		{ phone => paper : 0.8125 }
+		 
+SET: { phone,yogurt } :
+	support = { 0.6 }
+	confidence = 
+		{ phone => yogurt : 0.75 }
+		{ yogurt => phone : 0.8 }
+		 
+SET: { candy,potatoes } :
+	support = { 0.55 }
+	confidence = 
+		{ candy => potatoes : 0.78571428571429 }
+		{ potatoes => candy : 0.73333333333333 }
+		 
+SET: { paper,potatoes } :
+	support = { 0.6 }
+	confidence = 
+		{ paper => potatoes : 0.85714285714286 }
+		{ potatoes => paper : 0.8 }
+		 
+SET: { potatoes,yogurt } :
+	support = { 0.55 }
+	confidence = 
+		{ potatoes => yogurt : 0.73333333333333 }
+		{ yogurt => potatoes : 0.73333333333333 }
+		 
+SET: { candy,paper } :
+	support = { 0.5 }
+	confidence = 
+		{ candy => paper : 0.71428571428571 }
+		{ paper => candy : 0.71428571428571 }
+		 
+SET: { candy,yogurt } :
+	support = { 0.5 }
+	confidence = 
+		{ candy => yogurt : 0.71428571428571 }
+		{ yogurt => candy : 0.66666666666667 }
+		 
+SET: { paper,yogurt } :
+	support = { 0.5 }
+	confidence = 
+		{ paper => yogurt : 0.71428571428571 }
+		{ yogurt => paper : 0.66666666666667 }
+		 
+SET: { pen,yogurt } :
+	support = { 0.5 }
+	confidence = 
+		{ pen => yogurt : 0.90909090909091 }
+		{ yogurt => pen : 0.66666666666667 }
+		 
+SET: { candy,phone,potatoes } :
+	support = { 0.5 }
+	confidence = 
+		{ candy => phone,potatoes : 0.71428571428571 }
+		{ candy,phone => potatoes : 0.76923076923077 }
+		{ phone => potatoes,candy : 0.625 }
+		{ phone,potatoes => candy : 0.83333333333333 }
+		{ potatoes => candy,phone : 0.66666666666667 }
+		{ potatoes,candy => phone : 0.90909090909091 }
+		 
+SET: { paper,phone,potatoes } :
+	support = { 0.55 }
+	confidence = 
+		{ paper => phone,potatoes : 0.78571428571429 }
+		{ paper,phone => potatoes : 0.84615384615385 }
+		{ phone => potatoes,paper : 0.6875 }
+		{ phone,potatoes => paper : 0.91666666666667 }
+		{ potatoes => paper,phone : 0.73333333333333 }
+		{ potatoes,paper => phone : 0.91666666666667 }
+		 
+SET: { candy,paper,phone } :
+	support = { 0.5 }
+	confidence = 
+		{ candy => paper,phone : 0.71428571428571 }
+		{ candy,paper => phone : 1 }
+		{ paper => phone,candy : 0.71428571428571 }
+		{ paper,phone => candy : 0.76923076923077 }
+		{ phone => candy,paper : 0.625 }
+		{ phone,candy => paper : 0.76923076923077 }
+		 
+SUPPORT: 0.5
+CONFIDENCE: 0.6--------------------Input File: ./data/5.txt--------------------
+SET: { magazine,pen } :
+	support = { 0.55 }
+	confidence = 
+		{ magazine => pen : 1 }
+		{ pen => magazine : 0.84615384615385 }
+		 
