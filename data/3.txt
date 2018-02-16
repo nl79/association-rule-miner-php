@@ -12,9 +12,9 @@
 12, magazine, pen, beer, paper, candy, water, potatoes
 13, yogurt, phone, beer, potatoes, pen, magazine, water, paper, candy
 14, magazine, potatoes, phone, paper, candy
-15, candy, yogurt, water, pen, bread, potatoes, magazine, beer, paper, phone
+15, candy, yogurt, water, pen, beer, paper, phone
 16, pen, beer, bread
 17, bread, yogurt, candy, water, pen
 18, potatoes, bread, magazine, pen, candy
 19, candy, bread, phone, pen, paper
-20, water, bread, pen, paper, candy, potatoes, yogurt, phone, beer
+20, water, bread, pen, paper, phone, beer

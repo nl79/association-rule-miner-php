@@ -15,6 +15,6 @@
 15, candy, potatoes, yogurt, bread
 16, pen
 17, pen, beer, paper, phone, water, bread, yogurt
-18, pen, candy, water, phone, potatoes, paper, bread, beer, yogurt
+18, pen, candy, bread, beer, yogurt
 19, beer, paper, magazine, pen, water
 20, beer, bread, candy, magazine, phone, yogurt

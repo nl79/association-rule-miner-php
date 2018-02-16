@@ -3,8 +3,26 @@
 require_once('./lib/Apriori.php');
 
 // Configuration for the Apriori object.
-$confidence = .6;
+$shortopts = "s:c:";
+$longopts = [
+  'supp:',
+  'conf:'
+];
+
+$options = getopt($shortopts, $longopts);
+
+// Default Values
+$confidence = .5;
 $support = .5;
+
+if(isset($options['supp'])) {
+  $support = $options['supp'];
+}
+
+if(isset($options['conf'])) {
+  $confidence = $options['conf'];
+}
+
 
 $config = [
   'confidence' => $confidence,
@@ -50,10 +68,14 @@ foreach($files as $file) {
   $result[$file] = $miner->process($data)->result()->toString();
 }
 
-foreach($result as $key => $list) {
-  print("SUPPORT: $support\n");
-  print("CONFIDENCE: $confidence");
 
+print("SUPPORT: $support\n");
+print("CONFIDENCE: $confidence\n\n");
+foreach($result as $key => $list) {
   print("--------------------Input File: $key--------------------\n");
-  print($list);
+  if(!empty($list)) {
+    print($list);
+  } else {
+    print("\nNo Results Found\n\n");
+  }
 }
